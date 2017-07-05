@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_multicolor_gray"
+    android:background="@drawable/background"
     tools:context="com.creative.nearme.MainActivity">
 
     <include
@@ -11,6 +11,7 @@
         layout="@layout/toolbar" />
 
     <GridView
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/toolbar"
         android:id="@+id/gridview"
         android:layout_width="match_parent"

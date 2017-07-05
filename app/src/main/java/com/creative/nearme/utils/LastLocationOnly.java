@@ -95,6 +95,10 @@ public class LastLocationOnly {
         }
     }
 
+    public Location getLastLocation() {
+        return location;
+    }
+
     public double getLatitude() {
         if (location != null) {
             latitude = location.getLatitude();

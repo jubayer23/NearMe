@@ -8,7 +8,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Result implements Serializable
 {
-
+    @SerializedName("vicinity")
+    @Expose
+    private String vicinity;
     @SerializedName("formatted_address")
     @Expose
     private String formattedAddress;
@@ -143,4 +145,15 @@ public class Result implements Serializable
         this.types = types;
     }
 
+    public String getVicinity() {
+        return vicinity;
+    }
+
+    public void setVicinity(String vicinity) {
+        this.vicinity = vicinity;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 }
