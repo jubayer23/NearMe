@@ -18,6 +18,8 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:text="ATM"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="14sp" />
 
 </LinearLayout>

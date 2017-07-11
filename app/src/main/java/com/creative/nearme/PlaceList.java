@@ -5,7 +5,10 @@ import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -20,6 +23,8 @@ import com.creative.nearme.model.PlaceInfo;
 import com.creative.nearme.model.Result;
 import com.google.gson.Gson;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,20 +57,41 @@ public class PlaceList extends AppCompatActivity {
 
 
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
         String searchText = intent.getStringExtra(MainActivity.KEY_SEARCHTEXT);
-        boolean PLACE_SEARCH = intent.getBooleanExtra(MainActivity.KEY_IS_PLACESEARCH, false);
+        boolean isPlaceSearch = intent.getBooleanExtra(MainActivity.KEY_IS_PLACESEARCH, false);
         String query_type = intent.getStringExtra(MainActivity.KEY_QUERYTYPE);
-        Location user_loc =  intent.getParcelableExtra(MainActivity.KEY_USER_LOC);
+        final Location user_loc =  intent.getParcelableExtra(MainActivity.KEY_USER_LOC);
 
         placeListAdapter = new PlaceListAdapter(this,places,user_loc);
         listView.setAdapter(placeListAdapter);
 
-        String url = getApiUrl(PLACE_SEARCH, query_type, searchText, user_loc);
+        String url = getApiUrl(isPlaceSearch, query_type, searchText, user_loc);
 
 
         sendRequestToGetPlaceList(url);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Result result = places.get(i);
+
+                Intent intent1 = new Intent(PlaceList.this,PlaceDetailsActivity.class);
+
+
+                intent1.putExtra("ref", result.getReference());
+                intent1.putExtra("place_id", result.getPlaceId());
+                intent1.putExtra("api_counter", 2);
+
+
+
+                startActivity(intent1);
+
+            }
+        });
 
 
     }
@@ -83,6 +109,29 @@ public class PlaceList extends AppCompatActivity {
         String url = "";
 
         if (isPlaceSearch) {
+
+            String query = "";
+
+            try {
+                query = "query=" + URLEncoder.encode(searchText, "utf-8");
+            } catch (UnsupportedEncodingException e1) {
+                e1.printStackTrace();
+            }
+
+            // place type to be searched
+
+
+            String radius = "radius=50000";
+
+            String location = "location=" + user_loc.getLatitude() + "," + user_loc.getLongitude();
+
+            String key = "key=" + ApiUrl.API_KEY[2];
+
+            // Building the parameters to the web service
+            String parameters = query + "&" + location + "&" + radius + "&" + key;
+
+
+            return ApiUrl.url_place_search + parameters;
 
         } else {
 

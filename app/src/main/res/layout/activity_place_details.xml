@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:local="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="320.0dip"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?colorPrimary"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/float_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        android:onClick="showDirection"
+        android:src="@drawable/direction"
+        app:backgroundTint="@color/white"
+        app:fabSize="auto"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="end|bottom|center" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@color/background"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvpname"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:background="@color/colorPrimary"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20.0sp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <ImageView
+                    android:id="@+id/ivContactItem"
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:contentDescription="@string/imgContent"
+                    android:src="@drawable/address" />
+
+                <TextView
+                    android:id="@+id/tvpaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvadd"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_marginTop="@dimen/mthree"
+                    android:layout_toRightOf="@+id/ivContactItem"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/tvadd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_toRightOf="@+id/ivContactItem"
+                    android:text="@string/address"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </RelativeLayout>
+
+            <include layout="@layout/item_divider" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/meight"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <ImageView
+                    android:id="@+id/idis"
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:contentDescription="@string/imgContent"
+                    android:src="@drawable/distance" />
+
+                <TextView
+                    android:id="@+id/tvpdistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dis"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_marginTop="@dimen/mthree"
+                    android:layout_toRightOf="@id/idis"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@id/dis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_toRightOf="@id/idis"
+                    android:text="@string/distance"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </RelativeLayout>
+
+            <include layout="@layout/item_divider" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/meight"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <ImageView
+                    android:id="@+id/iphone"
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:contentDescription="@string/imgContent"
+                    android:src="@drawable/phone" />
+
+                <TextView
+                    android:id="@+id/tvpphoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phone"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_marginTop="@dimen/mthree"
+                    android:layout_toRightOf="@id/iphone"
+                    android:onClick="openDialPad"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_toRightOf="@id/iphone"
+                    android:onClick="openDialPad"
+                    android:text="@string/phone"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </RelativeLayout>
+
+            <include layout="@layout/item_divider" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <ImageView
+                    android:id="@+id/iweb"
+                    android:layout_width="35.0dip"
+                    android:layout_height="35.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:contentDescription="@string/imgContent"
+                    android:src="@drawable/website" />
+
+                <TextView
+                    android:id="@+id/tvpwebSite2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/web"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_marginTop="@dimen/mthree"
+                    android:layout_toRightOf="@id/iweb"
+                    android:onClick="openUrl"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/web"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/meight"
+                    android:layout_toRightOf="@id/iweb"
+                    android:onClick="openUrl"
+                    android:text="@string/website"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </RelativeLayout>
+
+            <include layout="@layout/item_divider" />
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/imgplace"
+                android:layout_width="fill_parent"
+                android:layout_height="250.0dip"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

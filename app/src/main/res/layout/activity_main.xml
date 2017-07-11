@@ -6,13 +6,26 @@
     android:background="@drawable/background"
     tools:context="com.creative.nearme.MainActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+
 
     <GridView
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/toolbar_container"
         android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

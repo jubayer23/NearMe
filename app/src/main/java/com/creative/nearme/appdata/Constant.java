@@ -10,21 +10,24 @@ public class Constant {
 
 
     public static String IconSet[] = {
+            "airport/Airport/airport",
+            "amusement/Amusement/amusement_park",
             "atm/ATM/atm",
             "bank/Banks/bank",
+            "bar/Bars/bar",
             "cafe/Cafes/cafe",
-            "food/Foods/food|restaurant",
-            "restaurent2/Restaurant/restaurant",
-            "bekary/Bakery/bakery",
-            "mealdelivery/MealDelivery/meal_delivery",
-            "mealdelivery/MealTakeWay/meal_takeway",
+            "cinema/Theaters/movie_theater",
+            "church/Church/chruch",
             "dentist/Dentists/dentist",
-            "doctor/Doctors/doctor",
-            "hospital2/Hospitals/hospital",
-            "pharmecy2/Pharmacy/pharmacy",
-            "gym/GYMs/gym",
-            "veterinarian/Veterinarian/veterinarian",
-            "physiotherapist/Physiotherapist/physiotherapist"
+            "hair/HairCare/hair_care|beauty_salon",
+            "hospital/Hospitals/hospital",
+            "library/Library/library",
+            "parking/Park/rv_park",
+            "police/Police/police",
+            "restaurant/Foods/food|restaurant",
+            "taxi/TaxiStands/taxi_stand",
+            "zoo/Zoos/zoo"
+
     };
 
     //drawable/textview/queryTYPE

@@ -115,11 +115,19 @@ public class PlaceListAdapter extends BaseAdapter {
 
 
         viewHolder.productName.setText(place.getName());
-        if(place.getVicinity() != null && !place.getVicinity().isEmpty()){
-            viewHolder.productDetails.setText(place.getVicinity());
-        }else if(place.getFormattedAddress() != null && !place.getFormattedAddress().isEmpty()){
-            viewHolder.productDetails.setText(place.getFormattedAddress());
-        }
+
+      if( place.getOpeningHours() != null && place.getOpeningHours().getOpenNow() != null){
+          viewHolder.productDetails.setText(place.getOpeningHours().getOpenNow() ? "Status : Open Now" : "Status : Closed Now");
+      }
+       else{
+          viewHolder.productDetails.setText( "Status : Closed Now");
+
+      }
+        //if(place.getVicinity() != null && !place.getVicinity().isEmpty()){
+        //    viewHolder.productDetails.setText(place.getVicinity());
+        //}else if(place.getFormattedAddress() != null && !place.getFormattedAddress().isEmpty()){
+       //     viewHolder.productDetails.setText(place.getFormattedAddress());
+       // }
 
         return convertView;
     }

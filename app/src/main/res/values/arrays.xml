@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+    <string-array name="query_suggestions">
+        <item>ATM</item>
+        <item>BANK</item>
+        <item>BUS STAND</item>
+        <item>FIRE STATION</item>
+        <item>GOVERNMENT OFFICE</item>
+        <item>HOSPITAL</item>
+        <item>HOTELS</item>
+        <item>MALL</item>
+        <item>FUEL STATION</item>
+        <item>PHARMACY</item>
+        <item>THEATER</item>
+        <item>CAFE</item>
+        <item>LIBRARY</item>
+        <item>POLICE</item>
+        <item>GYM</item>
+        <item>DOCTOR</item>
+        <item>DENTIST</item>
+        <item>CAR REPAIR</item>
+        <item>SCHOOL</item>
+        <item>RESTAURANT</item>
+        <item>ELECTRONICS</item>
+        <item>GROCERY</item>
+        <item>LAUNDRY</item>
+        <item>PET STORE</item>
+        <item>VETERINARY CARE</item>
+        <item>HAIR CARE</item>
+        <item>ART GALLERY</item>
+        <item>BEAUTY SALON</item>
+        <item>NIGHT CLUB</item>
+        <item>SPA</item>
+    </string-array>
+</resources>

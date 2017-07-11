@@ -18,4 +18,8 @@ public class ApiUrl {
 
     public static String url_photo_base = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=";
     public static String url_seach_nearby = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+    public static String url_place_search = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
+
+    public static String url_place_details = "https://maps.googleapis.com/maps/api/place/details/json?";
+
 }
