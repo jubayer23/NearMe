@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.creative.nearme.adapter.IconGridAdapter;
 import com.creative.nearme.appdata.Constant;
@@ -147,9 +148,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case R.id.more_apps:
                 // startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=com.ydoodle.mymoneymanager")));
+                Toast.makeText(MainActivity.this,"Please publish your app on play store first!",Toast.LENGTH_LONG).show();
                 break;
             case R.id.wikipedia:
-                // startActivity(new Intent(getApplicationContext(), Wikipedia_activity.class));
+                startActivity(new Intent(getApplicationContext(), WikipedidaActivity.class));
                 break;
             case R.id.cshareApp:
                 String str = getApplicationContext().getApplicationInfo().sourceDir;
