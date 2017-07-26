@@ -170,4 +170,6 @@
     <string name="tagmanager_preview_dialog_title">Preview</string>
     <string name="website">Website</string>
     <string name="wikipediasearch">wikipedia search</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

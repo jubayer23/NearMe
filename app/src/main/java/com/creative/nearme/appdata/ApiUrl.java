@@ -21,5 +21,8 @@ public class ApiUrl {
     public static String url_place_search = "https://maps.googleapis.com/maps/api/place/textsearch/json?";
 
     public static String url_place_details = "https://maps.googleapis.com/maps/api/place/details/json?";
+    public static String url_location_details_using_name = "http://maps.googleapis.com/maps/api/geocode/json?";
+
+
 
 }

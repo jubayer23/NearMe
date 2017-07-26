@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private MaterialSearchView searchView;
 
+    private Location desire_location;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setSupportActionBar(toolbar);
         //getSupportActionBar().setTitle("");
         //  getSupportActionBar().setIcon(R.mipmap.icon);
+
+        desire_location =  getIntent().getParcelableExtra(HomeActivityFragment.EXTRA_LOCATION);
+
+        Log.d("DEBUG",String.valueOf(desire_location.getLatitude()));
+        Log.d("DEBUG",String.valueOf(desire_location.getLongitude()));
 
         init();
 
@@ -118,14 +125,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void openPlaceList(String query_type, String search_text, boolean isSearch){
-        LastLocationOnly lastLocationOnly = new LastLocationOnly(this);
-
-        Location user_location = lastLocationOnly.getLastLocation();
 
         Intent intent = new Intent(MainActivity.this, PlaceList.class);
 
         intent.putExtra(KEY_IS_PLACESEARCH, isSearch);
-        intent.putExtra(KEY_USER_LOC, user_location);
+        intent.putExtra(KEY_USER_LOC, desire_location);
         intent.putExtra(KEY_SEARCHTEXT, search_text);
         intent.putExtra(KEY_QUERYTYPE, query_type);
         intent.putExtra(KEY_TITLE, "ALL LIST");
